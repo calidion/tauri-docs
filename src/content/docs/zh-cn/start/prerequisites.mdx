@@ -282,7 +282,10 @@ export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
 
 ```sh
 export ANDROID_HOME="$HOME/Android/Sdk"
-export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+IDX=0
+IN=$(ls -1 $ANDROID_HOME/ndk);
+ARR_IN=(${IN//\b/ })
+export NDK_HOME="$ANDROID_HOME/ndk/${ARR_IN[$IDX]}"
 ```
 
 </TabItem>
@@ -290,7 +293,10 @@ export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 
 ```sh
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+IDX=0
+IN=$(ls -1 $ANDROID_HOME/ndk);
+ARR_IN=(${IN//\b/ })
+export NDK_HOME="$ANDROID_HOME/ndk/${ARR_IN[$IDX]}"
 ```
 
 </TabItem>
